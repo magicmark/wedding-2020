@@ -16,6 +16,11 @@
     <noscript
       ><link rel="stylesheet" href="assets/css/noscript.css"
     /></noscript>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/1.30.1/date_fns.min.js"
+      integrity="sha512-F+u8eWHrfY8Xw9BLzZ8rG/0wIvs0y+JyRJrXjp3VjtFPylAEEGwKbua5Ip/oiVhaTDaDs4eU2Xtsxjs/9ag2bQ=="
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body class="is-preload">
     <div id="wrapper">
@@ -31,16 +36,36 @@
               href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20201115T133000&p1=224"
               >1:30pm PT • 4:30 ET • 9:30 GMT</a
             >
-          	</p>
-          <p>San Francisco (via Zoom)</p>
+          </p>
+          <p>Land's End, San Francisco (via Zoom)</p>
         </header>
         <hr />
         <p>We'll post the zoom link here on the day. Check back later!</p>
         <p>
           <a style="text-decoration: underline" href="/wedding.ics"
-            >Download iCal reminder</a
+            >Download Calendar reminder</a
           >
         </p>
+        <hr />
+
+        <div id="fancy-countdown">
+          <div>
+            <span class="days">-</span>
+            <span class="label">Days</span>
+          </div>
+          <div>
+            <span class="hours">-</span>
+            <span class="label">Hours</span>
+          </div>
+          <div>
+            <span class="minutes">-</span>
+            <span class="label">Minutes</span>
+          </div>
+          <div>
+            <span class="seconds">-</span>
+            <span class="label">Seconds</span>
+          </div>
+        </div>
       </section>
     </div>
 
@@ -57,6 +82,27 @@
           ? " is-ie"
           : "";
       }
+
+      const weddingDate = new Date(1605475800000);
+
+      function updateCountdown() {
+        const now = new Date();
+        const days = dateFns.differenceInDays(weddingDate, now);
+        const hours = dateFns.differenceInHours(weddingDate, now) % 24;
+        const minutes = dateFns.differenceInMinutes(weddingDate, now) % 60;
+        const seconds = dateFns.differenceInSeconds(weddingDate, now) % 60;
+        // document.getElementById('countdown').innerHTML = `${days} Days ${hours} Hours ${minutes} Minutes ${seconds} Seconds`;
+
+
+        document.querySelector('#fancy-countdown .days').innerHTML = days;
+        document.querySelector('#fancy-countdown .hours').innerHTML = hours;
+        document.querySelector('#fancy-countdown .minutes').innerHTML = minutes;
+        document.querySelector('#fancy-countdown .seconds').innerHTML = seconds;
+
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
     </script>
   </body>
 </html>

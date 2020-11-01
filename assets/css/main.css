@@ -159,7 +159,7 @@
 	body, input, select, textarea {
 		color: #414f57;
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
-		font-size: 14pt;
+		font-size: 12pt;
 		font-weight: 300;
 		line-height: 2;
 		letter-spacing: 0.2em;
@@ -1059,3 +1059,19 @@
 		/* body.is-ie #wrapper {
 			height: 100%;
 		} */
+
+#fancy-countdown {
+	display: flex;
+	justify-content: space-between;
+} 
+
+#fancy-countdown div {
+	display: flex;
+	flex-direction: column;
+	margin-left: 0.75rem;
+}
+
+#fancy-countdown .label {
+	color: #666;
+	font-size: 0.85em;
+}
