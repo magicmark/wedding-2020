@@ -121,6 +121,9 @@
 		background-size: 100px 100px, cover,				cover; */
 		background-position: top left,		center center,		bottom center;
 		background-attachment: fixed,			fixed,				fixed;
+		background-repeat: no-repeat;
+		background-size: cover;
+
 	}
 
 		body:after {
@@ -1030,19 +1033,20 @@
 		-ms-perspective: 1000px;
 		perspective: 1000px;
 		position: relative;
-		min-height: 100%;
 		padding: 1.5em;
 		z-index: 2;
+		align-items: center;
+		height: 100%;
 	}
 
-		#wrapper > * {
+		/* #wrapper > * {
 			z-index: 1;
 		}
 
 		#wrapper:before {
 			content: '';
 			display: block;
-		}
+		} */
 
 		@media screen and (max-width: 360px) {
 
@@ -1052,6 +1056,6 @@
 
 		}
 
-		body.is-ie #wrapper {
+		/* body.is-ie #wrapper {
 			height: 100%;
-		}
+		} */
