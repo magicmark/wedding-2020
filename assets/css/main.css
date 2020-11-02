@@ -1075,3 +1075,30 @@
 	color: #666;
 	font-size: 0.85em;
 }
+
+#ship {
+	position: absolute;
+	display: block;
+	z-index: 9999;
+	bottom: 56px;
+	right: 26px;
+	color: #666;
+}
+
+#ship a:hover {
+	color: burlywood;
+}
+
+#ship svg {
+	width: 128px;
+}
+
+#video video {
+	position: absolute;
+	display: none;
+	left: 0;
+	top: 0;
+	right: 0;
+	margin: auto;
+	z-index: 9999;
+}
