@@ -102,10 +102,21 @@
 
       updateCountdown();
       setInterval(updateCountdown, 1000);
+
+      function toggleJack() {
+        const currStyle = document.querySelector('#video video').style.display;
+
+        if (currStyle === 'block') {
+          document.querySelector('#video video').style.display='none';
+        } else {
+          document.querySelector('#video video').style.display='block';
+          document.querySelector('#video video').play();
+        }
+      }
     </script>
 
     <div id="ship">
-      <a href="#" onClick="document.querySelector('#video video').style.display='block';">
+      <a href="#" onClick="toggleJack();">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1840 1619.744">
           <path
             fill="none"
@@ -128,7 +139,7 @@
     </div>
 
     <div id="video">
-      <video controls autoplay width="600">
+      <video controls autoplay="true" width="600">
         <source src="jacksparrow.mov" type="video/mp4" />
         Sorry, your browser doesn't support embedded videos.
       </video>
