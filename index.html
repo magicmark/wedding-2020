@@ -108,6 +108,7 @@
 
         if (currStyle === 'block') {
           document.querySelector('#video video').style.display='none';
+          document.querySelector('#video video').pause();
         } else {
           document.querySelector('#video video').style.display='block';
           document.querySelector('#video video').play();
@@ -140,7 +141,7 @@
 
     <div id="video">
       <video controls autoplay width="600">
-        <source src="jacksparrow.mov" type="video/quicktime" />
+        <source src="jack2.mov" />
         Sorry, your browser doesn't support embedded videos.
       </video>
     </div>
